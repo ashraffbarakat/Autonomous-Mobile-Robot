@@ -1,5 +1,9 @@
 # MCT443s: Autonomous Mobile Robot (AMR)
+<p align="center">
+  <img src="docs/cover.png" alt="MCT443s Autonomous Mobile Robot Banner" width="100%">
+</p>
 
+# MCT443s: Autonomous Mobile Robot (AMR)
 A complete ROS2-based Autonomous Mobile Robot system designed, simulated in Gazebo, and deployed on custom hardware for the **MCT443s Design of Autonomous Systems** course project[cite: 1, 3, 4].
 
 ## 📌 Project Tasks
