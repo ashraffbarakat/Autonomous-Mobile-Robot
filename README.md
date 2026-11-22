@@ -9,7 +9,7 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/ROS_2-Humble%20%7C%20Jazzy-22314E?logo=ros" />
+  <img src="https://img.shields.io/badge/ROS_2-%20%7C%20Jazzy-22314E?logo=ros" />
   <img src="https://img.shields.io/badge/Simulation-Gazebo-orange" />
   <img src="https://img.shields.io/badge/Computer_Vision-OpenCV-green?logo=opencv" />
   <img src="https://img.shields.io/badge/Language-Python%20%7C%20C%2B%2B-blue?logo=python" />
