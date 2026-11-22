@@ -1,6 +1,6 @@
 # MCT443s: Autonomous Mobile Robot (AMR)
 <p align="center">
-  <img src="docs/cover.png" alt="MCT443s Autonomous Mobile Robot Banner" width="100%">
+  <img src="cover.png" width="100%">
 </p>
 
 # MCT443s: Autonomous Mobile Robot (AMR)
