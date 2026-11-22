@@ -107,7 +107,7 @@ The project uses a custom-built four-wheeled mobile robot designed for autonomou
 | Maximum Width | Less than 30 cm |
 | Drive Motors | DC geared motors |
 | Steering | Rear steering mechanism |
-| Processing Unit | Raspberry Pi / Jetson Nano / ESP32 + Laptop |
+| Processing Unit | Raspberry Pi + Arduino + Laptop |
 | Power System | Battery-powered platform |
 
 ### Sensors & Electronic Components
