@@ -102,11 +102,11 @@ The project uses a custom-built four-wheeled mobile robot designed for autonomou
 
 | Component | Description |
 |---|---|
-| Vehicle Type | Four-wheeled mobile robot |
+| Vehicle Type | Diffrential mobile robot |
 | Drive Configuration | Rear-wheel drive |
 | Maximum Width | Less than 30 cm |
 | Drive Motors | DC geared motors |
-| Steering | Front steering mechanism |
+| Steering | Rear steering mechanism |
 | Processing Unit | Raspberry Pi / Jetson Nano / ESP32 + Laptop |
 | Power System | Battery-powered platform |
 
@@ -116,66 +116,13 @@ The project uses a custom-built four-wheeled mobile robot designed for autonomou
 |---|---|
 | RGB Camera | Lane detection and visual perception |
 | IMU | Heading estimation and orientation feedback |
-| Ultrasonic / LiDAR | Obstacle detection and distance measurement |
+| Ultrasonic | Obstacle detection and distance measurement |
 | Wheel Encoders | Wheel speed measurement and odometry |
 | Motor Drivers | Motor actuation and speed control |
 | Embedded Controller | Low-level hardware interfacing |
 
 *Final hardware configuration is subject to the selected components and implementation.*
 
----
-
-## 4. Software Architecture
-
-The software is designed around ROS 2, with independent nodes responsible for perception, localization, control, and hardware communication.
-
-### System Pipeline
-
-```text
-        Sensors & Inputs
-               |
-       +-------+-------+
-       |               |
-     Camera          IMU
-       |               |
-       v               v
-+-----------------------------+
-|       Perception Layer      |
-|                             |
-|  Lane Detection             |
-|  Obstacle Detection         |
-+-----------------------------+
-               |
-               v
-+-----------------------------+
-|      Localization Layer     |
-|                             |
-|  Odometry                    |
-|  Heading Estimation         |
-|  Sensor Feedback            |
-+-----------------------------+
-               |
-               v
-+-----------------------------+
-|        Control Layer        |
-|                             |
-|  Lane Following             |
-|  Steering Control           |
-|  Speed Control              |
-|  Lane Switching             |
-+-----------------------------+
-               |
-               v
-+-----------------------------+
-|       Hardware Layer        |
-|                             |
-|  Motor Drivers              |
-|  Steering Actuation         |
-+-----------------------------+
-               |
-               v
-        Mobile Robot
-```
 
 ### Main Software Components
 
@@ -188,70 +135,6 @@ The software is designed around ROS 2, with independent nodes responsible for pe
 | Python / C++ | Algorithm development |
 | MATLAB / Simulink | Mathematical modeling and controller analysis |
 
----
-
-## 5. Repository Structure
-
-The repository is organized into modular ROS 2 packages to maintain separation of concerns and simplify development.
-
-```text
-Autonomous-Mobile-Robot/
-│
-├── README.md
-├── LICENSE
-├── cover.png
-│
-├── ros2_ws/
-│   └── src/
-│       │
-│       ├── amr_description/
-│       │   ├── urdf/
-│       │   ├── meshes/
-│       │   └── config/
-│       │
-│       ├── amr_gazebo/
-│       │   ├── worlds/
-│       │   ├── models/
-│       │   └── launch/
-│       │
-│       ├── amr_perception/
-│       │   ├── amr_perception/
-│       │   ├── config/
-│       │   └── launch/
-│       │
-│       ├── amr_localization/
-│       │   ├── amr_localization/
-│       │   ├── config/
-│       │   └── launch/
-│       │
-│       ├── amr_control/
-│       │   ├── amr_control/
-│       │   ├── config/
-│       │   └── launch/
-│       │
-│       ├── amr_hardware/
-│       │   ├── amr_hardware/
-│       │   ├── config/
-│       │   └── launch/
-│       │
-│       └── amr_bringup/
-│           ├── launch/
-│           └── config/
-│
-├── matlab_simulink/
-│   ├── models/
-│   ├── controllers/
-│   └── analysis/
-│
-├── docs/
-│   ├── images/
-│   ├── diagrams/
-│   └── documentation/
-│
-└── media/
-    ├── simulation/
-    └── hardware/
-```
 
 ---
 
@@ -282,34 +165,6 @@ The development process follows a modular workflow:
 - Colcon build tools
 - Git
 
-### Clone the Repository
-
-```bash
-git clone <YOUR_REPOSITORY_URL>
-cd Autonomous-Mobile-Robot
-```
-
-### Build the ROS 2 Workspace
-
-```bash
-cd ros2_ws
-
-source /opt/ros/<ROS_DISTRO>/setup.bash
-
-rosdep install --from-paths src --ignore-src -r -y
-
-colcon build --symlink-install
-
-source install/setup.bash
-```
-
-Replace `<ROS_DISTRO>` with your installed ROS 2 distribution, such as `humble` or `jazzy`.
-
-### Verify the Workspace
-
-```bash
-ros2 pkg list | grep amr
-```
 
 ---
 
@@ -390,7 +245,7 @@ The project involves the integration of mechanical design, embedded systems, rob
 
 ## 12. License
 
-This project is distributed under the license specified in the repository's `LICENSE` file.
+This project is distributed under the license specified in the repository's `MIT LICENSE` file.
 
 ---
 
